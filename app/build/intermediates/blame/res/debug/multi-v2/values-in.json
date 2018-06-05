@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\RevelationOrange\\AndroidStudioProjects\\pokemongenerator\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-in\\values-in.xml",
+            "outputFile": "C:\\Users\\RevelationOrange\\AndroidStudioProjects\\pkmnGen\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-in\\values-in.xml",
             "map": [
                 {
                     "source": "C:\\Users\\RevelationOrange\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ad396803fe7c7fbd5f6ecbfbca392b24\\res\\values-in\\values-in.xml",
