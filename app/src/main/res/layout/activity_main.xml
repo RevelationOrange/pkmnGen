@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textViewHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/infomsg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <EditText
+        android:id="@+id/editTextSpcInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/enter_species"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerLvlsList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeader" />
+
+    <Button
+        android:id="@+id/buttonGenerate"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="checkSpecies"
+        android:text="@string/gen"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSpcInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinnerLvlsList"
+        app:layout_constraintTop_toTopOf="@+id/editTextSpcInput"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewHPtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/baseHP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotalTxt" />
+
+    <TextView
+        android:id="@+id/textViewTotalTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/statsTotal"
+        app:layout_constraintStart_toEndOf="@+id/textViewSPATKtxt"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSpcInput" />
+
+    <TextView
+        android:id="@+id/textViewHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultStatValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewTotalTxt"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotalTxt" />
+
+    <TextView
+        android:id="@+id/textViewATKtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/baseATK"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHPtxt" />
+
+    <TextView
+        android:id="@+id/textViewATK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultStatValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewHP"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHP" />
+
+    <TextView
+        android:id="@+id/textViewDEFtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/baseDEF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewATKtxt" />
+
+    <TextView
+        android:id="@+id/textViewDEF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultStatValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewATK"
+        app:layout_constraintTop_toBottomOf="@+id/textViewATK" />
+
+    <TextView
+        android:id="@+id/textViewSPATKtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/baseSPATK"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDEFtxt" />
+
+    <TextView
+        android:id="@+id/textViewSPDEFtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/baseSPDEF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSPATKtxt" />
+
+    <TextView
+        android:id="@+id/textViewSPDtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/baseSPD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSPDEFtxt" />
+
+    <TextView
+        android:id="@+id/textViewSPATK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultStatValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewDEF"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDEF" />
+
+    <TextView
+        android:id="@+id/textViewSPDEF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultStatValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewSPATK"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSPATK" />
+
+    <TextView
+        android:id="@+id/textViewSPD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultStatValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewSPDEF"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSPDEF" />
+
+    <TextView
+        android:id="@+id/textViewNatureTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="64dp"
+        android:layout_marginStart="64dp"
+        android:text="@string/natureTxt"
+        app:layout_constraintStart_toEndOf="@+id/textViewIVtxt"
+        app:layout_constraintTop_toTopOf="@+id/textViewTotalTxt" />
+
+    <TextView
+        android:id="@+id/textViewNature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewNatureTxt"
+        app:layout_constraintTop_toTopOf="@+id/textViewNatureTxt" />
+
+    <TextView
+        android:id="@+id/textViewMovesTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/movesTxt"
+        app:layout_constraintStart_toStartOf="@+id/textViewNatureTxt"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNature" />
+
+    <TextView
+        android:id="@+id/textViewMove0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewMovesTxt"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMovesTxt" />
+
+    <TextView
+        android:id="@+id/textViewMove1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewMove0"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMove0" />
+
+    <TextView
+        android:id="@+id/textViewMove2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewMove1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMove1" />
+
+    <TextView
+        android:id="@+id/textViewMove3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewMove2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMove2" />
+
+    <TextView
+        android:id="@+id/textViewErrors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSpcInput" />
+
+    <EditText
+        android:id="@+id/editTextNickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:hint="@string/enterNick"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSPDtxt" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:onClick="savePkmnStats"
+        android:text="@string/save"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextNickname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextNickname" />
+
+    <Button
+        android:id="@+id/buttonLinkCable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:onClick="startSendActivity"
+        android:text="@string/sendFileScreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewStatsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/stats"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewTotalTxt"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewIVtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/ivs"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewTotalTxt"
+        app:layout_constraintStart_toEndOf="@+id/textViewTotalTxt" />
+
+    <TextView
+        android:id="@+id/textViewHPIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultIVValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewIVtxt"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIVtxt" />
+
+    <TextView
+        android:id="@+id/textViewATKIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultIVValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewHPIV"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHPIV" />
+
+    <TextView
+        android:id="@+id/textViewDEFIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultIVValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewATKIV"
+        app:layout_constraintTop_toBottomOf="@+id/textViewATKIV" />
+
+    <TextView
+        android:id="@+id/textViewSPATKIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultIVValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewDEFIV"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDEFIV" />
+
+    <TextView
+        android:id="@+id/textViewSPDEFIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultIVValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewSPATKIV"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSPATKIV" />
+
+    <TextView
+        android:id="@+id/textViewSPDIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defaultIVValue"
+        app:layout_constraintStart_toStartOf="@+id/textViewSPDEFIV"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSPDEFIV" />
+
+    <Spinner
+        android:id="@+id/spinnerLvlsList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSpcInput"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGenerate"
+        app:layout_constraintStart_toEndOf="@+id/editTextSpcInput"
+        app:layout_constraintTop_toTopOf="@+id/editTextSpcInput" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,4 @@
+#Fri Jun 01 16:00:55 EDT 2018
+base.0=C\:\\Users\\RevelationOrange\\AndroidStudioProjects\\pokemongenerator\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\116
+path.0=classes.dex
+renamed.0=classes.dex

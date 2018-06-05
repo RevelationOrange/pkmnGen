@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">pokemon generator</string>
+    <string name="enter_species">Enter pkmn</string>
+    <string name="chk_stats">Check base stats</string>
+    <string name="baseHP">HP:</string>
+    <string name="baseATK">ATK:</string>
+    <string name="baseDEF">DEF:</string>
+    <string name="baseSPATK">SPATK:</string>
+    <string name="baseSPDEF">SPDEF:</string>
+    <string name="baseSPD">SPD:</string>
+    <string name="infomsg">Enter a pokemon below to generate stats, moves, etc.</string>
+    <string name="gen">generate!</string>
+    <string name="stats">stats:</string>
+    <string name="defaultStatValue">5</string>
+    <string name="natureTxt">nature:</string>
+    <string name="movesTxt">moves:</string>
+    <string name="errSpcNotFound">Error! No such pokemon species</string>
+    <string name="save">save</string>
+    <string name="send_to">WHUTCHU WANT</string>
+    <string name="sendFileScreen">Link cable (send)</string>
+    <string name="sendFile">send this pokemon</string>
+    <string name="statsTotal">total:</string>
+    <string name="ivs">IV:</string>
+    <string name="defaultIVValue">0</string>
+    <string name="enterNick">Nickname (optional)</string>
+</resources>
