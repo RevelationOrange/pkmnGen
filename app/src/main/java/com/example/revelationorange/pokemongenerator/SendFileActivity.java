@@ -16,8 +16,7 @@ import java.util.List;
 
 public class SendFileActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     String sendfname = "";
-    private Spinner fileListDropdown;
-//    File sDir = MainActivity.saveDir;
+    //    File sDir = MainActivity.saveDir;
     File sDir;
 
     @Override
@@ -29,7 +28,7 @@ public class SendFileActivity extends AppCompatActivity implements AdapterView.O
         String sDirName = i.getStringExtra("fileLoc");
         sDir = new File(sDirName);
 
-        fileListDropdown = findViewById(R.id.spinnerFileList);
+        Spinner fileListDropdown = findViewById(R.id.spinnerFileList);
         List<String> csvList = new ArrayList<>(Arrays.asList(sDir.list()));
         // sort here, maybe
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, csvList);

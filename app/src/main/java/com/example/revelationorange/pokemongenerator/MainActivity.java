@@ -30,6 +30,7 @@ import org.json.JSONException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 7;
     public Pkmn usrPkmn;
     public File saveDir;
-    private Spinner lvlsListDropdown;
     private Integer enteredLvl = 50;
     public String lastSavedNick = "";
 
@@ -47,7 +47,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lvlsListDropdown = findViewById(R.id.spinnerLvlsList);
+        Spinner lvlsListDropdown = findViewById(R.id.spinnerLvlsList);
+
+        try {
+            Field popup = Spinner.class.getDeclaredField("mPopup");
+            popup.setAccessible(true);
+
+            // Get private mPopup member variable and try cast to ListPopupWindow
+            android.widget.ListPopupWindow popupWindow = (android.widget.ListPopupWindow) popup.get(lvlsListDropdown);
+
+            // Set popupWindow height to 500px
+            popupWindow.setHeight(700);
+        }
+        catch (NoClassDefFoundError | ClassCastException | NoSuchFieldException | IllegalAccessException e) {
+            // silently fail...
+        }
 
         List<Integer> lvlsList = new ArrayList<>();
         for (int i = 0; i < 100; i++) { lvlsList.add(i+1); }
